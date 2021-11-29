@@ -1,0 +1,27 @@
+.result_content {
+    border: 2px solid #5c5951;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    margin: 10px 0px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+img {
+    width: 200px;
+    height: 200px;
+}
+.source_content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+.source_content p {
+    font-size: 12px;
+    font-weight: 500;
+}
+/* .text_content{
+    
+} */
