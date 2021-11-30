@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { MemoizedSearch } from "../search/Search";
 import "./Header.css";
 
@@ -22,14 +22,14 @@ const Header: React.FC = () => {
       )}
       <ul>
         <li>
-          <Link className="menu-item" to="/">
+          <NavLink className="menu-item" to="/">
             Home
-          </Link>
+          </NavLink>
         </li>
         <li>
-          <Link className="menu-item" to="/news">
+          <NavLink className="menu-item" to="/news">
             News
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </div>

@@ -4,6 +4,7 @@ import CircularIndeterminate from "../../shared/circularProgress";
 import serpAPI from "../../services/serpAPI";
 import useQuery from "../hooks/useQuery";
 import "./Home.css";
+import { searchPhrases } from "../../shared/constants";
 
 const Home: React.FC = () => {
   const [result, setResult] = useState([]);
@@ -15,6 +16,9 @@ const Home: React.FC = () => {
   useEffect(() => {
     if (search) {
       searchSomething(search);
+    } else {
+      let index = Math.floor(Math.random() * searchPhrases.length);
+      searchSomething(searchPhrases[index]);
     }
   }, [search]);
 

@@ -29,3 +29,6 @@ li .menu-item {
 li .menu-item:hover {
   color: #e05941;
 }
+a.menu-item.active{
+  color: #e05941;
+}
