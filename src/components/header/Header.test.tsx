@@ -6,7 +6,7 @@ describe("header component", () => {
 
   it("should exists", async () => {
     render(<BrowserRouter><Header /></BrowserRouter>);
-    const dialog = screen.queryByTestId("container");
+    const dialog = screen.queryByTestId("header-component");
     expect(dialog).toBeDefined();
 
     const home = screen.findByText(/Home/i);

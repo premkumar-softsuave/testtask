@@ -1,7 +1,6 @@
-.news_container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    flex-direction: column;
+.news_container {
+  display: block;
+  padding: 20px;
+  height: calc(100vh - 70px);
+  overflow: auto;
 }

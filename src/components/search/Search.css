@@ -1,6 +1,43 @@
-.search-container{
-    padding: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.search-container {
+  padding: 0px;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+.search-field .MuiOutlinedInput-input {
+  height: auto;
+  padding: 8px 0px 8px 15px;
+  color: #fff;
+  font-size: 13px;
+  font-family: "Montserrat";
+}
+
+.search-field .MuiIconButton-root {
+  color: #fff;
+  padding: 0;
+}
+
+.search-field .MuiOutlinedInput-root {
+  color: #fff;
+}
+
+.search-field .MuiInputAdornment-root {
+  margin-right: 0;
+}
+
+.search-field .MuiOutlinedInput-root fieldset {
+  border-color: #fff;
+  padding: 0;
+}
+
+.search-field {
+  position: relative;
+}
+
+.search-field .MuiIconButton-root .MuiSvgIcon-root {
+  font-size: 22px;
+}
+
+.search-field .MuiOutlinedInput-input:focus {
+  outline: none;
 }

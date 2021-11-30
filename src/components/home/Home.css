@@ -1,0 +1,6 @@
+.home_container {
+  display: block;
+  padding: 20px;
+  height: calc(100vh - 70px);
+  overflow: auto;
+}

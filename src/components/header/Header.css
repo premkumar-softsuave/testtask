@@ -1,28 +1,31 @@
 .header-container {
-  position: sticky;
-  top: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(to top, #1344a4, #011054);
+  padding: 15px 20px;
+  height: 70px;
 }
 
 ul {
   list-style-type: none;
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  gap: 50px;
-  padding: 20px;
+  gap: 30px;
+  padding: 0px;
+  margin: 0;
+  margin-left: auto;
 }
 
-li a {
+li .menu-item {
+  color: #fefefe;
+  display: block;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  transition: all 0.3s ease 0s;
   text-decoration: none;
 }
-
-.header-contnet {
-  color: #000;
-  display: flex;
-  flex-flow: row;
-  gap: 20px;
-  margin-bottom: 20px;
-  align-items: center;
-  position: relative;
-  text-align: center;
+li .menu-item:hover {
+  color: #e05941;
 }

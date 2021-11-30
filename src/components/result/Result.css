@@ -1,27 +1,97 @@
 .result_content {
-    border: 2px solid #f5f4f1;
-    display: flex;
-    justify-content: flex-start;
-    padding: 20px;
-    margin: 10px 0px;
-    flex-direction: row;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  justify-content: flex-start;
+  padding: 0;
+  margin-bottom: 25px;
+  border-radius: 13px;
+  box-shadow: 0 0 10px #0000001a;
+  overflow: hidden;
+  height: 200px;
 }
-img {
-    width: 200px;
-    height: 200px;
+.image_content {
+  margin-right: 15px;
 }
-.source_content{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+.image_content img {
+  width: 200px;
+  height: 100%;
+  border-radius: 13px;
+  object-fit: cover;
+}
+.source_content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
 }
 .source_content p {
-    font-size: 12px;
-    font-weight: 500;
+  font-size: 12px;
+  font-weight: 500;
+  color: gray;
 }
 /* .text_content{
     
 } */
+
+.text_content h3.card-title {
+  margin: 0;
+  margin-bottom: 10px;
+  color: #1344a5;
+  font-size: 20px;
+  line-height: 34px;
+  transition: all 0.3s ease 0s;
+}
+
+.text_content {
+  padding: 20px 30px 20px 20px;
+  position: relative;
+  width: 100%;
+}
+
+.text_content h3.card-title:hover {
+  color: #e05941;
+}
+
+.text_content p.card-desc {
+  margin: 0;
+  font-size: 16px;
+  color: #035f91;
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+}
+
+.text_content .card-action {
+  color: #035f91;
+  display: flex;
+  align-items: center;
+}
+
+.text_content span.visit-name {
+  font-size: 16px;
+  margin-right: 10px;
+  width: 90px;
+}
+
+.text_content a.visit-url {
+  text-decoration: none;
+  background: #eef3f6 none repeat scroll 0 0;
+  border-radius: 20px;
+  color: #035f91;
+  font-size: 12px;
+  font-weight: 500;
+  height: auto;
+  line-height: 20px;
+  padding: 5px 15px;
+  transition: all 0.3s ease 0s;
+}
+
+.text_content a.visit-url:hover {
+  background: #bd4e45 none repeat scroll 0 0;
+  color: #fff;
+}

@@ -3,18 +3,19 @@ import { IconButton, InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import usePrevious from "../hooks/usePrevious";
 import useQuery from "../hooks/useQuery";
+import "./Search.css";
 
 type Props = {
   searchSomething: (value: string) => void;
 };
 
 const Search: React.FC<Props> = ({ searchSomething }) => {
-  const [searchKey, setsearchKey] = useState<string>("");
+  const [searchKey, setsearchKey] = useState<string>('');
   const prevSearch = usePrevious(searchKey);
-  const [search] = useQuery(['search']);
+  const [search] = useQuery(["search"]);
 
   const handleSearch = (e?: React.FormEvent) => {
-    if(e) e.preventDefault()
+    if (e) e.preventDefault();
 
     if (searchKey !== prevSearch) {
       searchSomething(searchKey);
@@ -22,8 +23,8 @@ const Search: React.FC<Props> = ({ searchSomething }) => {
   };
 
   useEffect(() => {
-    setsearchKey(search)
-  }, [search])
+    setsearchKey(search);
+  }, [search]);
 
   return (
     <div className="search-container" data-testid="container">
@@ -41,7 +42,7 @@ const Search: React.FC<Props> = ({ searchSomething }) => {
               </InputAdornment>
             ),
           }}
-          value={searchKey}
+          value={searchKey || ''}
           onChange={(event) => setsearchKey(event.target.value)}
         />
       </form>
