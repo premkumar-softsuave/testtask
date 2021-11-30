@@ -1,9 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import Home from "./components/home/Home";
-import News from "./components/news/News";
-import Header from "./components/header/Header";
-
+import Home from "./pages/Home";
+import News from "./pages/News";
+import Header from "./components/Header";
 import "./App.css";
 
 function App() {

@@ -1,8 +1,5 @@
 .search-container {
   padding: 0px;
-  /* display: flex;
-  align-items: center;
-  justify-content: center; */
 }
 .search-field .MuiOutlinedInput-input {
   height: auto;
@@ -32,6 +29,7 @@
 
 .search-field {
   position: relative;
+  width: 280px;
 }
 
 .search-field .MuiIconButton-root .MuiSvgIcon-root {

@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, useNavigate, useLocation } from "react-router-dom";
-import { MemoizedSearch } from "../search/Search";
-import "./Header.css";
+import { MemoizedSearch } from "../Search";
+import "./styles.css";
 
 const Header: React.FC = () => {
   const navigate = useNavigate();

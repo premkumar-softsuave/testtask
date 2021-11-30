@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-import serpAPI from "../../services/serpAPI";
+import serpAPI from "../../services/service";
 import CircularIndeterminate from "../../shared/circularProgress";
-import Result from "../result/Result";
-import './News.css';
+import { newsPharses } from "../../shared/constants";
+import Result from "../../components/Result";
+import './styles.css';
 
 const News: React.FC = () => {
   const [result, setResult] = useState([]);
@@ -15,7 +16,8 @@ const News: React.FC = () => {
 
   const fetchNews = async () => {
     setLoading(true);
-    const result = await serpAPI.search('top stories');
+    let index = Math.floor(Math.random() * newsPharses.length);
+    const result = await serpAPI.search(newsPharses[index]);
     setResult(result.top_stories);
     setImage([])
     setLoading(false);

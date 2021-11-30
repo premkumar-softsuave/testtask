@@ -1,11 +1,11 @@
 import {render, screen } from "@testing-library/react";
 import { BrowserRouter } from "react-router-dom";
-import Result from './Result';
+import News from '.';
 
-describe("Result component", () => {
+describe("News component", () => {
 
   it("should exists", async () => {
-    render(<BrowserRouter><Result  result={[]} image={[]} index={0} type={"testing"} /></BrowserRouter>);
+    render(<BrowserRouter><News /></BrowserRouter>);
     const dialog = screen.queryByTestId("container");
     expect(dialog).toBeDefined();
   });

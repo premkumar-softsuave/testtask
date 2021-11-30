@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Result from "../result/Result";
+import Result from "../../components/Result";
 import CircularIndeterminate from "../../shared/circularProgress";
-import serpAPI from "../../services/serpAPI";
-import useQuery from "../hooks/useQuery";
-import "./Home.css";
+import serpAPI from "../../services/service";
+import useQuery from "../../hooks/useQuery";
 import { searchPhrases } from "../../shared/constants";
+import "./styles.css";
 
 const Home: React.FC = () => {
   const [result, setResult] = useState([]);

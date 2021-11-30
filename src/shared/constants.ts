@@ -8,3 +8,8 @@ export const searchPhrases = [
     "top 10", "food", "indian college",
     "chennai", "america", "chirstmas", "information technology"
 ];
+
+export const newsPharses = [
+    "world news", "covid news", "technology news", 
+    "indian news", "londan news", "top stories"
+];

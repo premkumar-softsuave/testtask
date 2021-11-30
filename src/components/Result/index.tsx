@@ -1,5 +1,6 @@
 import React, { useMemo } from "react";
-import "./Result.css";
+import NoImage from '../../assets/images/NoImage.png';
+import "./styles.css";
 
 type Props = {
   result: any;
@@ -11,9 +12,9 @@ type Props = {
 const Result: React.FC<Props> = ({ result, image, index, type }) => {
   const imgUrl = useMemo(() => {
     if (type === "search") {
-      return image[index]?.thumbnail || null;
+      return image[index]?.thumbnail || NoImage;
     } else if (type === "news") {
-      return result?.thumbnail || null;
+      return result?.thumbnail || NoImage;
     }
   }, [type, image, result, index]);
 
