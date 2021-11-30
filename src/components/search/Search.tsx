@@ -1,37 +1,45 @@
 import React, { useState } from "react";
 import { IconButton, InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
+import usePrevious from "../hooks/usePrevious";
 
 type Props = {
   searchSomething: (value: string) => void;
 };
 
 const Search: React.FC<Props> = ({ searchSomething }) => {
-  const [searchText, setSearchText] = useState<string>("");
+  const [searchKey, setsearchKey] = useState<string>("");
+  const prevSearch = usePrevious(searchKey);
 
-  const handleSearch = (value: string) => {
-    setSearchText(value);
-    searchSomething(value);
+  const handleSearch = (e?: React.FormEvent) => {
+    if(e) e.preventDefault()
+    
+    if (searchKey !== prevSearch) {
+      searchSomething(searchKey);
+    }
   };
+
   return (
-    <div className="search-container">
-      <TextField
-            variant="outlined"
-            className="search-field"
-            placeholder="Search..."
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position="start">
-                  <IconButton>
-                    <SearchIcon />
-                  </IconButton>
-                </InputAdornment>
-              ),
-            }}
-            onChange={(event) => handleSearch(event.target.value)}
-          />
+    <div className="search-container" data-testid="container">
+      <form onSubmit={handleSearch}>
+        <TextField
+          variant="outlined"
+          className="search-field"
+          placeholder="Search..."
+          InputProps={{
+            endAdornment: (
+              <InputAdornment position="start" onClick={() => handleSearch()}>
+                <IconButton>
+                  <SearchIcon />
+                </IconButton>
+              </InputAdornment>
+            ),
+          }}
+          onChange={(event) => setsearchKey(event.target.value)}
+        />
+      </form>
     </div>
   );
 };
 
-export default React.memo(Search);
+export const MemoizedSearch = React.memo(Search);

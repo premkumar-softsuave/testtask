@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Search from "../search/Search";
+import { MemoizedSearch } from "../search/Search";
 import serpAPI from "../../services/serpAPI";
 import Result from "../result/Result";
 import CircularIndeterminate from "../../shared/circularProgress";
@@ -18,8 +18,8 @@ const Home: React.FC = () => {
   };
 
   return (
-    <div className="home_container">
-      <Search searchSomething={searchSomething} />
+    <div className="home_container" data-testid="test-container">
+      <MemoizedSearch searchSomething={searchSomething} />
       {!loading ? !!result && result.map((res: any, index: number) => (
         <div className="home_content" key={index}>
           <Result result={res} image={image} index={index} type='search' />

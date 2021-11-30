@@ -1,12 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Search from "../search/Search";
 
 import "./Header.css";
 
 const Header: React.FC = () => {
   return (
-    <div className="header-container">
+    <div className="header-container" data-testid="container">
       <div className="header-list">
       </div>
       <ul>

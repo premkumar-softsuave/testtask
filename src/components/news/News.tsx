@@ -22,7 +22,7 @@ const News: React.FC = () => {
   };
 
   return (
-    <div className="news_container">
+    <div className="news_container" data-testid="container">
       {!loading ? (
         !!result &&
         result.map((res: any, index: number) => (
