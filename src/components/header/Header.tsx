@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       </div>
       <ul>
         <li>
-          <Link to="/home">
+          <Link to="/">
             <div className="header-contnet">Home</div>
           </Link>
         </li>

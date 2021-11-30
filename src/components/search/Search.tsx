@@ -13,7 +13,7 @@ const Search: React.FC<Props> = ({ searchSomething }) => {
 
   const handleSearch = (e?: React.FormEvent) => {
     if(e) e.preventDefault()
-    
+
     if (searchKey !== prevSearch) {
       searchSomething(searchKey);
     }
@@ -21,7 +21,7 @@ const Search: React.FC<Props> = ({ searchSomething }) => {
 
   return (
     <div className="search-container" data-testid="container">
-      <form onSubmit={handleSearch}>
+      <form data-testid="submit-form" onSubmit={handleSearch}>
         <TextField
           variant="outlined"
           className="search-field"
@@ -35,6 +35,7 @@ const Search: React.FC<Props> = ({ searchSomething }) => {
               </InputAdornment>
             ),
           }}
+          value={searchKey}
           onChange={(event) => setsearchKey(event.target.value)}
         />
       </form>
