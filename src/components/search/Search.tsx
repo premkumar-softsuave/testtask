@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { IconButton, InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import usePrevious from "../hooks/usePrevious";
+import useQuery from "../hooks/useQuery";
 
 type Props = {
   searchSomething: (value: string) => void;
@@ -10,6 +11,7 @@ type Props = {
 const Search: React.FC<Props> = ({ searchSomething }) => {
   const [searchKey, setsearchKey] = useState<string>("");
   const prevSearch = usePrevious(searchKey);
+  const [search] = useQuery(['search']);
 
   const handleSearch = (e?: React.FormEvent) => {
     if(e) e.preventDefault()
@@ -18,6 +20,10 @@ const Search: React.FC<Props> = ({ searchSomething }) => {
       searchSomething(searchKey);
     }
   };
+
+  useEffect(() => {
+    setsearchKey(search)
+  }, [search])
 
   return (
     <div className="search-container" data-testid="container">
